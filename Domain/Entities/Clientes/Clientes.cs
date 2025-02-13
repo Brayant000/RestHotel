@@ -1,4 +1,4 @@
-﻿namespace RestHotel.Core.Entities.Clientes
+﻿namespace SGA.Domain.Entities.Clientes
 {
     public class Cliente
     {

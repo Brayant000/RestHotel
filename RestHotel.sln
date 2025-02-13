@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestHotel", "RestHotel\RestHotel.csproj", "{C2873DF5-40C5-44D9-B893-F9EF39DD82AB}"
 EndProject
@@ -36,43 +36,6 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SGA.Api", "SGA.Api\SGA.Api.fsproj", "{1BAC6821-DBF4-4D7F-B7AC-B62B13AFD537}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SGA.Web", "SGA.Web\SGA.Web.fsproj", "{A8A1DCC8-D681-454E-BD69-401166FF92D6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{5A7197EF-68CE-48F7-9945-E5B4C32D2A70}"
-	ProjectSection(SolutionItems) = preProject
-		AuditEntity.cs = AuditEntity.cs
-		Operaction.cs = Operaction.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{860F1ED5-F269-4B16-B9EF-7CEC84E2A146}"
-	ProjectSection(SolutionItems) = preProject
-		Clientes.cs = Clientes.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{450435E6-32A0-49AF-A99E-8C1B222F9973}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{DD11C340-F12B-4F9A-8699-397937E566FD}"
-	ProjectSection(SolutionItems) = preProject
-		Bus.cs = Bus.cs
-		Ruta.cs = Ruta.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clientes", "Clientes", "{C2E264D2-5E2E-4CE6-A382-8A9C1C10A3DA}"
-	ProjectSection(SolutionItems) = preProject
-		Clientes.cs = Clientes.cs
-		TipoDocumento.cs = TipoDocumento.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reservas", "Reservas", "{6703B4AB-4024-4926-86B6-9D9BB75EA8BC}"
-	ProjectSection(SolutionItems) = preProject
-		Habitacioncs.cs = Habitacioncs.cs
-		Reserva.cs = Reserva.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pagos", "Pagos", "{EDAFAA2F-AAB9-4B3E-BA67-8F24D19DCC9B}"
-	ProjectSection(SolutionItems) = preProject
-		MetodoPago.cs = MetodoPago.cs
-		Pagos.cs = Pagos.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -134,12 +97,5 @@ Global
 		{9459E5A7-AF97-4E17-A3E9-5AC86420E554} = {8084FB97-D615-47B4-A8FE-F18F9FBC595C}
 		{1BAC6821-DBF4-4D7F-B7AC-B62B13AFD537} = {3C915B06-22E5-4C5B-84ED-0CAF61302EFD}
 		{A8A1DCC8-D681-454E-BD69-401166FF92D6} = {A75066F0-0E07-4919-83E0-653A8C211AB1}
-		{5A7197EF-68CE-48F7-9945-E5B4C32D2A70} = {58D2CA22-0FAC-4D33-8283-C5D0813CF66C}
-		{860F1ED5-F269-4B16-B9EF-7CEC84E2A146} = {58D2CA22-0FAC-4D33-8283-C5D0813CF66C}
-		{450435E6-32A0-49AF-A99E-8C1B222F9973} = {58D2CA22-0FAC-4D33-8283-C5D0813CF66C}
-		{DD11C340-F12B-4F9A-8699-397937E566FD} = {860F1ED5-F269-4B16-B9EF-7CEC84E2A146}
-		{C2E264D2-5E2E-4CE6-A382-8A9C1C10A3DA} = {860F1ED5-F269-4B16-B9EF-7CEC84E2A146}
-		{6703B4AB-4024-4926-86B6-9D9BB75EA8BC} = {860F1ED5-F269-4B16-B9EF-7CEC84E2A146}
-		{EDAFAA2F-AAB9-4B3E-BA67-8F24D19DCC9B} = {860F1ED5-F269-4B16-B9EF-7CEC84E2A146}
 	EndGlobalSection
 EndGlobal
