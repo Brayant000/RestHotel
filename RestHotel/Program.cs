@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using RestHotel.Infrastructure.Persistence.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // 
+
+builder.Services.AddDbContext<HotelContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBHotel")));
 
 builder.Services.AddControllers();
 
