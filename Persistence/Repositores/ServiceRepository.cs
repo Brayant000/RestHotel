@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SGA.Domain.Entities.Servicios;
 using RestHotel.Infrastructure.Persistence.Context;
+using RestHotel.Infrastructure.Persistence.Entities;
 using RestHotel.Infrastructure.Persistence.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RestHotel.Infrastructure.Persistence.Repositories
 {
@@ -14,36 +16,26 @@ namespace RestHotel.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Servicio>> GetAllServicesAsync()
-        {
-            return await _context.Servicios.ToListAsync();
-        }
+        public async Task<IEnumerable<Service>> GetAllAsync() => await _context.Services.ToListAsync();
 
-        public async Task<Servicio> GetServiceByIdAsync(int id)
-        {
-            return await _context.Servicios.FindAsync(id);
-        }
+        public async Task<Service> GetByIdAsync(int id) => await _context.Services.FindAsync(id);
 
-        public async Task AddServiceAsync(Servicio servicio)
+        public async Task AddAsync(Service service)
         {
-            await _context.Servicios.AddAsync(servicio);
+            await _context.Services.AddAsync(service);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateServiceAsync(Servicio servicio)
+        public async Task UpdateAsync(Service service)
         {
-            _context.Servicios.Update(servicio);
+            _context.Services.Update(service);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteServiceAsync(int id)
+        public async Task DeleteAsync(Service service)
         {
-            var servicio = await _context.Servicios.FindAsync(id);
-            if (servicio != null)
-            {
-                _context.Servicios.Remove(servicio);
-                await _context.SaveChangesAsync();
-            }
+            _context.Services.Remove(service);
+            await _context.SaveChangesAsync();
         }
     }
 }

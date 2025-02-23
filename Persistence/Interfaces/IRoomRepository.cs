@@ -1,13 +1,15 @@
-﻿using SGA.Domain.Entities.Reservas;
+﻿using RestHotel.Infrastructure.Persistence.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RestHotel.Infrastructure.Persistence.Interfaces
 {
     public interface IRoomRepository
     {
-        Task<IEnumerable<Habitacion>> GetAllRoomsAsync();
-        Task<Habitacion> GetRoomByIdAsync(int id);
-        Task AddRoomAsync(Habitacion habitacion);
-        Task UpdateRoomAsync(Habitacion habitacion);
-        Task DeleteRoomAsync(int id);
+        Task<IEnumerable<Room>> GetAllAsync();
+        Task<Room> GetByIdAsync(int id);
+        Task AddAsync(Room room);
+        Task UpdateAsync(Room room);
+        Task DeleteAsync(Room room);
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SGA.Domain.Entities.Reservas;
-using SGA.Domain.Entities.Servicios;
+using RestHotel.Infrastructure.Persistence.Entities;
 
 namespace RestHotel.Infrastructure.Persistence.Context
 {
@@ -8,14 +7,20 @@ namespace RestHotel.Infrastructure.Persistence.Context
     {
         public HotelContext(DbContextOptions<HotelContext> options) : base(options) { }
 
-        public DbSet<Habitacion> Habitaciones { get; set; }
-        public DbSet<Reserva> Reservas { get; set; }
-        public DbSet<Servicio> Servicios { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Service> Services { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(HotelContext).Assembly);
+
+            modelBuilder.Entity<Room>()
+                .HasIndex(r => r.Name)
+                .IsUnique(); // Evita nombres duplicados en habitaciones
+
+            modelBuilder.Entity<Service>()
+                .Property(s => s.Cost)
+                .HasPrecision(10, 2); // Define precisión decimal
         }
     }
 }

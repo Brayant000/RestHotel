@@ -1,13 +1,15 @@
-﻿using SGA.Domain.Entities.Servicios;
+﻿using RestHotel.Infrastructure.Persistence.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RestHotel.Infrastructure.Persistence.Interfaces
 {
     public interface IServiceRepository
     {
-        Task<IEnumerable<Servicio>> GetAllServicesAsync();
-        Task<Servicio> GetServiceByIdAsync(int id);
-        Task AddServiceAsync(Servicio servicio);
-        Task UpdateServiceAsync(Servicio servicio);
-        Task DeleteServiceAsync(int id);
+        Task<IEnumerable<Service>> GetAllAsync();
+        Task<Service> GetByIdAsync(int id);
+        Task AddAsync(Service service);
+        Task UpdateAsync(Service service);
+        Task DeleteAsync(Service service);
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SGA.Domain.Entities.Reservas;
 using RestHotel.Infrastructure.Persistence.Context;
+using RestHotel.Infrastructure.Persistence.Entities;
 using RestHotel.Infrastructure.Persistence.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RestHotel.Infrastructure.Persistence.Repositories
 {
@@ -14,36 +16,26 @@ namespace RestHotel.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Habitacion>> GetAllRoomsAsync()
-        {
-            return await _context.Habitaciones.ToListAsync();
-        }
+        public async Task<IEnumerable<Room>> GetAllAsync() => await _context.Rooms.ToListAsync();
 
-        public async Task<Habitacion> GetRoomByIdAsync(int id)
-        {
-            return await _context.Habitaciones.FindAsync(id);
-        }
+        public async Task<Room> GetByIdAsync(int id) => await _context.Rooms.FindAsync(id);
 
-        public async Task AddRoomAsync(Habitacion habitacion)
+        public async Task AddAsync(Room room)
         {
-            await _context.Habitaciones.AddAsync(habitacion);
+            await _context.Rooms.AddAsync(room);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateRoomAsync(Habitacion habitacion)
+        public async Task UpdateAsync(Room room)
         {
-            _context.Habitaciones.Update(habitacion);
+            _context.Rooms.Update(room);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteRoomAsync(int id)
+        public async Task DeleteAsync(Room room)
         {
-            var habitacion = await _context.Habitaciones.FindAsync(id);
-            if (habitacion != null)
-            {
-                _context.Habitaciones.Remove(habitacion);
-                await _context.SaveChangesAsync();
-            }
+            _context.Rooms.Remove(room);
+            await _context.SaveChangesAsync();
         }
     }
 }
